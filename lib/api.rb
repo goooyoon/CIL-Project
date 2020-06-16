@@ -1,21 +1,8 @@
-require 'net/http'
-require 'open-uri'
-require 'json'
+require 'rest-client'
 
 class API
-    BASE_URL = ""
 
-    def get_programs
-        uri = URI.parse(URL)
-        response = Net::HTTP.get_response(uri)
-        response.body
+    def get_data
+      RestClient.get 'https://api.yelp.com/v3/businesses/search', {Authorization:"Bearer cDB26-cLjIZ5A0ex9Tk1gXjwHdFYrc9H4oEoTH99nAGKPw-awucezTGGd2hlHrTjxN-ZsU92SETe1gTSyA286QIPn-D8hwCoueQL6Cyx_eEQXtVeFs46J9Tl3N_oXnYx"}
       end
-     
 end
-
-require 'open-uri'
-require 'net/http'
-url = "https://api.yelp.com/v3/businesses/search"
-uri = URI.parse(url)
-response = Net::HTTP.get_response(uri)
-response.body
