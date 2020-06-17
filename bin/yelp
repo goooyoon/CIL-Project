@@ -2,4 +2,6 @@
 
 require_relative '../lib/environment'
 
-API.get_data("NYC")
+API.get_business_in_NYC("cafe")
+business = API.new
+puts business.get_business_in_NYC.uniq
