@@ -2,6 +2,7 @@
 
 require_relative '../lib/environment'
 
-API.get_business_in_NYC("cafe")
-business = API.new
-puts business.get_business_in_NYC.uniq
+# API.get_business_in_NYC("cafe")
+# API.get_restaurant("NYC")
+
+API.best_cafe_in_NYC

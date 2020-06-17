@@ -4,3 +4,4 @@ require 'json'
 
 require_relative "../yelp/api.rb"
 require_relative "../yelp/cli.rb"
+require_relative "../yelp/yelp.rb"
