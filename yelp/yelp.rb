@@ -1,21 +1,19 @@
-class Yelp
+# class Yelp
 
-    attr_accessor :name, :rating, :address
+#     attr_accessor :name, :rating, :address
 
-    @@all = []
+#     @@all = []
 
-    def initialize(name:)
-        self.name = name
-        self.save
-    end
+#     def initialize(name)
+#         self.name = name
+#         self.save
+#     end
 
-    def save
-        @@all << self
-    end
+#     def save
+#         @@all << self
+#     end
     
-    def self.all
-        @@all
-    end
-end
-
-  
+#     def self.all
+#         @@all
+#     end
+# end

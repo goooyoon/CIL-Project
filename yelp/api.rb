@@ -13,16 +13,22 @@ class API
   def self.best_cafe_in_NYC
     response = RestClient.get("https://api.yelp.com/v3/businesses/search?term=cafe&location=NYC&sort_by=best_match", {"Authorization": "Bearer #{API_KEY}"})
     data = JSON.parse(response)
-        data["businesses"].each do |best_data_hash|
+       data["businesses"].map do |best_data_hash|
        name = best_data_hash["name"]
-      #puts "Name: #{best_data_hash["name"]}"
-        # binding.pry
-
-      #   Yelp.new(name: name, rating: rating, address: address)
-
-      # puts "The best cafe in NYC is #{best_cafe_data["name"]}. and its address is #{best_cafe_data["address"]}." 
         end
       end
-  
-end
 
+      def self.cafe_detail
+        response = RestClient.get("https://api.yelp.com/v3/businesses/search?term=cafe&location=NYC&sort_by=best_match", {"Authorization": "Bearer #{API_KEY}"})
+        data = JSON.parse(response)
+        user_input = gets.strip
+        data["businesses"].each do |best_data_hash2|
+        name = best_data_hash2["name"]
+        rating = best_data_hash2["rating"]
+        address = best_data_hash2["location"]["disply_address"]
+        phone = best_data_hash2["display_phone"]
+        category = best_data_hash2["categories"]["title"]
+        price = best_data_hash2["price"]
+      end
+    end
+end
