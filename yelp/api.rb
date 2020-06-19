@@ -9,11 +9,12 @@ class API
         name = best_data_hash["name"]
         rating = best_data_hash["rating"]
         # binding.pry
-        address = best_data_hash["location"]["disply_address"]
+        address = best_data_hash["location"]["address1"]
         phone = best_data_hash["display_phone"]
         category = best_data_hash["categories"][0]["title"]
         price = best_data_hash["price"]
-        Yelp.new(name, rating, address, phone, category, price)
+        url = best_data_hash["url"]
+        Yelp.new(name, rating, address, phone, category, price, url)
       end
     end
 end
