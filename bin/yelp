@@ -5,6 +5,4 @@ require_relative '../lib/environment'
 
 cli = CLI.new
 cli.greeting
-cli.ask_cafe
-cli.get_detail
 
